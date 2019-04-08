@@ -11,8 +11,12 @@ public class MenuNavigator : MonoBehaviour
     public GameObject Player;
     public GameObject IceUsystem;
     public GameObject FireUsystem;
-   
-    
+    void Start()
+    {
+        IceUsystem.SetActive(false);
+        FireUsystem.SetActive(false);
+    }
+
 
 
     public void enterMainMenu()

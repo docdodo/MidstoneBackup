@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1967273067}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PrimaryFireSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967273066}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4744692850192698567}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6784728221341517407}
   - component: {fileID: 4621090473664108194}
   - component: {fileID: 251220779983594540}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RangedDummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,6 +65,7 @@ Transform:
   m_Children:
   - {fileID: 5432671761822539815}
   - {fileID: 1967273067}
+  - {fileID: 6407711519301357797}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -130,7 +131,7 @@ NavMeshAgent:
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
-  m_AutoRepath: 1
+  m_AutoRepath: 0
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
@@ -176,9 +177,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrimaryFire: {fileID: 8218196511056197666, guid: fe09d00b4b2dbe44bb5adc2acbc371d7,
     type: 3}
+  SecondaryFire: {fileID: 1370541381, guid: f01ea8b1329bbba4baf823f9efae7303, type: 3}
   PrimaryFireSpawn: {fileID: 1967273066}
+  SecondaryFireSpawn: {fileID: 2424464779700695416}
   primarytimer: 0
-  primarytimermax: 3
+  secondarytimer: 0
+  primarytimermax: 1
+  primarytimermax2: 3
+  secondarytimermax: 1
+  secondarytimermax2: 4
+--- !u!1 &2424464779700695416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6407711519301357797}
+  m_Layer: 10
+  m_Name: SecondaryFireSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6407711519301357797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424464779700695416}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4744692850192698567}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4797922981580165243
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +228,7 @@ GameObject:
   - component: {fileID: 9181782310948536003}
   - component: {fileID: 3987376785480152986}
   - component: {fileID: 7687276864664445284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyHurtBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -238,10 +275,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &7687276864664445284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,5 +293,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhp: 20
   hp: 0
-  expworth: 100
+  expworth: 40
   Player: {fileID: 0}

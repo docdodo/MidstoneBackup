@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class MagicMissle2 : MonoBehaviour
 {
-    float timer;
+    public bool IceBarrage;
+    public float timer;
+    public float damage;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        timer = 8.0f;
+        player = GameObject.Find("Player");
+        damage = player.GetComponent<Player>().IceMissledamage;
+        IceBarrage = player.GetComponent<Player>().IceBarrage;
+       if(IceBarrage)
+        {
+            damage = damage * 0.75f;
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +35,7 @@ public class MagicMissle2 : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy")
         {
-            other.GetComponent<Health>().changeHP(-10.0f);
+            other.GetComponent<Health>().changeHP(-damage);
             Destroy(transform.parent.gameObject);
             Destroy(this.gameObject);
 

@@ -26,6 +26,7 @@ public class MagicMissle : MonoBehaviour
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, Missletarget2, step);
         }
+       
 
         Debug.DrawRay(transform.position, transform.forward);
 
